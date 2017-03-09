@@ -45,10 +45,10 @@
 	if(isset($_POST['submit'])) {
 		$username = $_POST['Username'];
 		$password = $_POST['Password'];
-		$c = oci_connect($username, $password,"Localhost/XE");
+		$c = oci_connect($username, $password, "localhost/XE");
 		if(!$c){		//(username,password,localserver
-	
-	$e=ocl_error();												//BlogSheet
+
+	$e=oci_error();												//BlogSheet
 	trigger_error('Could not connect to database:'.$e['message'],E_USER_ERROR);
         													 //Oracle Conection 
 	}

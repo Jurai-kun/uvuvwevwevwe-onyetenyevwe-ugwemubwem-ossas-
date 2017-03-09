@@ -4,15 +4,15 @@
 <link rel="stylesheet" type="text/css" href="DIST/css/bootstrap.css">
 	<title>Inventory</title>
 	<?php
-      $c=oci_connect("Jhosua","123", "localhost/XE");
+      $c=oci_connect("hr","hr", "localhost/XE");
       if(!$c){		//(username,password,localserver
 	
 	$e=ocl_error();												//BlogSheet
 	trigger_error('Could not connect to database:'.$e['message'],E_USER_ERROR);
       }		  //Oracle Conection 
-      $s=oci_parse($c,"select * from inventory");  
+      $s=oci_parse($c,"select * from employees");  
       
-      if(!$s){
+      if(!$s){	
 	$e=oci_error();
 	trigger_error('Could not parse statement: ' .$e['message'],E_USER_ERROR);
       }				//SQL query
